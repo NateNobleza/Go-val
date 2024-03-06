@@ -1,0 +1,8 @@
+h1 {
+  color: #cc3844;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
