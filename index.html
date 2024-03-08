@@ -13,14 +13,17 @@
     <header>
       <h1>Valorant Agents</h1>
     </header>
-    <div class="container"></div>
-    <div class="row">
-      <input type="search" placeholder="search" />
-      <div class="button">
-        <button class="search-button">Search</button>
+    <main>
+      <div data-view="homepage">
+        <form>
+          <input type="search" placeholder="search" />
+          <button type="submit" id="search-button">Search</button>
+        </form>
+        <div>
+          <ul id="agent-container"></ul>
+        </div>
       </div>
-    </div>
-    <main></main>
+    </main>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
   </body>
