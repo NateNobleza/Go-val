@@ -1,5 +1,10 @@
+header {
+  background-color: rgb(124, 115, 115);
+}
+
 h1 {
   color: #cc3844;
+  background-color: grey;
 }
 
 .row {
