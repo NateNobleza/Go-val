@@ -5,10 +5,7 @@ const $agentContainer = document.querySelector('#agent-container');
 const $agentSearch = document.querySelector('input');
 const $form = document.querySelector('form');
 const $star = document.querySelector('.star');
-
 const $agentContainer2 = document.querySelector('#agent-container2');
-
-
 function card(displayIcon, displayName, description) {
     const agentCard = document.createElement('div');
     agentCard.setAttribute('class', 'agent-card');
@@ -29,7 +26,6 @@ function card(displayIcon, displayName, description) {
     agentCard.appendChild(button);
     $agentContainer.appendChild(agentCard);
 }
-
 function card2(displayIcon, displayName, description) {
     const agentCard2 = document.createElement('div');
     agentCard2.setAttribute('class', 'agent-card2');
@@ -46,35 +42,6 @@ function card2(displayIcon, displayName, description) {
     agentCard2.appendChild(desc2);
     $agentContainer2.appendChild(agentCard2);
 }
-// $star?.addEventListener('click', () => {
-//   const $homepageView = document.querySelector('[data-view="homepage"]');
-//   const $hiddenView = document.querySelector('.hidden');
-//   $homepageView.classList.toggle('hidden');
-//   $hiddenView.classList.toggle('hidden');
-//   if (!$hiddenView.classList.contains('hidden')) {
-//     populateFavorites();
-//   }
-// });
-// function populateFavorites() {
-//   const $favoriteList = document.querySelector('.favorite-list');
-//   $favoriteList.innerHTML = '';
-//   if (data.agentList.length === 0) {
-//     $favoriteList.textContent = 'No favorites yet.';
-//     return;
-//   }
-//   const favoritesFragment = document.createDocumentFragment();
-//  if (data.agentList.length > 0) {
-//       for (let i = 0; data.agentList.length; i++) {
-//         const { displayName, description, displayIcon } = data.agentList[i];
-//     card2(displayIcon, displayName, description);
-//   });
-//   $favoriteList.appendChild(favoritesFragment);
-// }
-
-$star?.addEventListener('click', (event) => {
-    console.log('button clicked');
-});
-
 $form?.addEventListener('submit', async function (e) {
     e.preventDefault();
     const agent = $agentSearch.value.trim();
@@ -96,6 +63,7 @@ $form?.addEventListener('submit', async function (e) {
                 const { displayName, description, displayIcon } = apiData[i];
                 card(displayIcon, displayName, description);
                 console.log(apiData);
+                console.log(apiData);
             }
         }
         else {
@@ -115,11 +83,7 @@ $agentContainer?.addEventListener('click', (event) => {
         const agentName = agentCard.querySelector('h2')?.textContent;
         console.log('agentName');
         if (agentName) {
-
             const matchingAgent = apiData.find((agent) => agent.displayName === agentName);
-
-            const matchingAgent = apiData.find((agent) => agent.displayName === agent);
-
             if (matchingAgent) {
                 console.log(matchingAgent);
                 pushData(matchingAgent);
@@ -135,7 +99,6 @@ $agentContainer?.addEventListener('click', (event) => {
     else {
         console.log('Agent card not found');
     }
-
 });
 $star?.addEventListener('click', () => {
     const $homepageView = document.querySelector('[data-view="homepage"]');
@@ -167,21 +130,3 @@ function populateFavorites() {
 function pushData(agentData) {
     data.agentList.push(agentData);
 }
-function deleteItems() {
-}
-
-    //have logic that targets a specific li that was clicked
-    //grab something in the dom tree 'agent name"
-    //compare agent name to api data, find a match that matches the name and object
-    //push object that matches into data.ts file
-});
-// const nate =  {
-//     displayName: "Agent 3",
-//     description: "Description of Agent 3",
-//     displayIcon: "url/to/agent3/icon.png"
-//   },
-function pushData(agentData) {
-    data.push(agentData);
-}
-// pushData(nate)
-
