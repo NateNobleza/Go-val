@@ -5,7 +5,10 @@ const $agentContainer = document.querySelector('#agent-container');
 const $agentSearch = document.querySelector('input');
 const $form = document.querySelector('form');
 const $star = document.querySelector('.star');
+
 const $agentContainer2 = document.querySelector('#agent-container2');
+
+
 function card(displayIcon, displayName, description) {
     const agentCard = document.createElement('div');
     agentCard.setAttribute('class', 'agent-card');
@@ -26,6 +29,7 @@ function card(displayIcon, displayName, description) {
     agentCard.appendChild(button);
     $agentContainer.appendChild(agentCard);
 }
+
 function card2(displayIcon, displayName, description) {
     const agentCard2 = document.createElement('div');
     agentCard2.setAttribute('class', 'agent-card2');
@@ -66,6 +70,11 @@ function card2(displayIcon, displayName, description) {
 //   });
 //   $favoriteList.appendChild(favoritesFragment);
 // }
+
+$star?.addEventListener('click', (event) => {
+    console.log('button clicked');
+});
+
 $form?.addEventListener('submit', async function (e) {
     e.preventDefault();
     const agent = $agentSearch.value.trim();
@@ -106,7 +115,11 @@ $agentContainer?.addEventListener('click', (event) => {
         const agentName = agentCard.querySelector('h2')?.textContent;
         console.log('agentName');
         if (agentName) {
+
             const matchingAgent = apiData.find((agent) => agent.displayName === agentName);
+
+            const matchingAgent = apiData.find((agent) => agent.displayName === agent);
+
             if (matchingAgent) {
                 console.log(matchingAgent);
                 pushData(matchingAgent);
@@ -122,6 +135,7 @@ $agentContainer?.addEventListener('click', (event) => {
     else {
         console.log('Agent card not found');
     }
+
 });
 $star?.addEventListener('click', () => {
     const $homepageView = document.querySelector('[data-view="homepage"]');
@@ -155,3 +169,19 @@ function pushData(agentData) {
 }
 function deleteItems() {
 }
+
+    //have logic that targets a specific li that was clicked
+    //grab something in the dom tree 'agent name"
+    //compare agent name to api data, find a match that matches the name and object
+    //push object that matches into data.ts file
+});
+// const nate =  {
+//     displayName: "Agent 3",
+//     description: "Description of Agent 3",
+//     displayIcon: "url/to/agent3/icon.png"
+//   },
+function pushData(agentData) {
+    data.push(agentData);
+}
+// pushData(nate)
+
