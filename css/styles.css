@@ -1,8 +1,93 @@
+header {
+  background-color: rgb(54, 53, 59);
+  padding: 1%;
+  display: flex;
+  border: 2px solid white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star {
+  margin-top: 0;
+  width: 0;
+  cursor: pointer;
+}
+
 h1 {
   color: #cc3844;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: whitesmoke;
 }
 
 .row {
   display: flex;
   justify-content: center;
+}
+
+.agent-card {
+  display: flex;
+  justify-content: center;
+  border-color: black;
+  border-style: outset;
+  border-width: 10px;
+}
+
+.agent-card2 {
+  display: flex;
+  justify-content: center;
+  border-color: black;
+  border-style: outset;
+  border-width: 10px;
+}
+
+.agent-container1 {
+  display: flex;
+  justify-content: center;
+}
+
+#agent-container {
+  max-width: 800px;
+}
+
+p {
+  margin-top: 100px;
+  width: 200px;
+}
+
+body {
+  background-color: #cc3844;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#add-button {
+  height: 20px;
+  margin-top: 10px;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(54, 53, 59);
+  color: #fff;
+  cursor: pointer;
 }
