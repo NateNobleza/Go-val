@@ -1,14 +1,72 @@
 let apiData;
-// const $home = document.querySelector('[data-view="homepage"]');
+const $home = document.querySelector('[data-view="homepage"]');
 const $agentContainer = document.querySelector('#agent-container');
 const $agentSearch = document.querySelector('input');
 const $form = document.querySelector('form');
+const $star = document.querySelector('.star');
+const $agentContainer2 = document.querySelector('#agent-container2')
+
+function card(
+  displayIcon: object,
+  displayName: object,
+  description: object,
+): void {
+  const agentCard = document.createElement('div');
+  agentCard.setAttribute('class', 'agent-card');
+
+  const icon = document.createElement('img');
+  icon.setAttribute('src', displayIcon);
+  icon.setAttribute('alt', `${displayName} icon`);
+  agentCard.appendChild(icon);
+
+  const name = document.createElement('h2');
+  name.setAttribute('class', 'agent-name');
+  name.textContent = displayName;
+  agentCard.appendChild(name);
+
+  const desc = document.createElement('p');
+  desc.textContent = description;
+  agentCard.appendChild(desc);
+
+  const button = document.createElement('button');
+  button.setAttribute('id', 'add-button');
+  button.textContent = 'add';
+  agentCard.appendChild(button);
+
+  $agentContainer.appendChild(agentCard);
+}
+
+function card2(
+  displayIcon: string,
+  displayName: string,
+  description: string,
+): void {
+  const agentCard2 = document.createElement('div');
+  agentCard2.setAttribute('class', 'agent-card2');
+
+  const icon2 = document.createElement('img');
+  icon2.setAttribute('src', displayIcon);
+  icon2.setAttribute('alt', `${displayName} icon`);
+  agentCard2.appendChild(icon2);
+
+  const name2 = document.createElement('h2');
+  name2.setAttribute('class', 'agent-name2');
+  name2.textContent = displayName;
+  agentCard2.appendChild(name2);
+
+  const desc2 = document.createElement('p');
+  desc2.textContent = description;
+  agentCard2.appendChild(desc2);
+
+  $agentContainer2.appendChild(agentCard2);
+}
+
 
 $form?.addEventListener('submit', async function (e) {
   e.preventDefault();
   const agent = $agentSearch.value.trim();
   if (!agent) {
-    $agentContainer.textContent = 'enter agent';
+    $agentContainer.textContent = 'Enter Agent';
     return;
   }
 
@@ -18,16 +76,15 @@ $form?.addEventListener('submit', async function (e) {
       throw new Error('HTTP error');
     } else {
       const data = await response.json();
-      console.log(data);
-      const $newAgent = document.createElement('li');
-      $newAgent.setAttribute('class', 'agents.displayName agents.description');
-      $agentContainer?.appendChild($newAgent);
+
+      apiData = data.data;
     }
 
-    apiData = data.data;
     if (apiData.length > 0) {
       for (let i = 0; apiData.length; i++) {
-        $agentContainer?.append(data[i]);
+        const { displayName, description, displayIcon } = apiData[i];
+        card(displayIcon, displayName, description);
+        console.log(apiData);
       }
     } else {
       $agentContainer.textContent = 'no agents listed';
@@ -37,3 +94,68 @@ $form?.addEventListener('submit', async function (e) {
   }
   $agentSearch.value = '';
 });
+
+$agentContainer?.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') console.log('button clicked');
+  const agentCard = event.target.closest('.agent-card');
+  if (agentCard) {
+    const agentName = agentCard.querySelector('h2')?.textContent;
+    console.log('agentName');
+    if (agentName) {
+      const matchingAgent = apiData.find(
+        (agent: any) => agent.displayName === agentName,
+      );
+      if (matchingAgent) {
+        console.log(matchingAgent);
+        pushData(matchingAgent);
+      } else {
+        console.log('No matching agent');
+      }
+    } else {
+      console.log('Agent name not found');
+    }
+  } else {
+    console.log('Agent card not found');
+  }
+
+
+});
+
+$star?.addEventListener('click', () => {
+  const $homepageView = document.querySelector('[data-view="homepage"]');
+  const $hiddenView = document.querySelector('.hidden');
+
+  $homepageView.classList.toggle('hidden');
+  $hiddenView.classList.toggle('hidden');
+
+  if (!$hiddenView.classList.contains('hidden')) {
+    populateFavorites();
+  }
+});
+
+function populateFavorites() {
+  const $favoriteList = document.querySelector('.favorite-list');
+  $favoriteList.innerHTML = '';
+
+  if (data.agentList.length === 0) {
+    $favoriteList.textContent = 'No favorites yet.';
+    return;
+  }
+ if (data.agentList.length > 0) {
+      for (let i = 0; data.agentList.length; i++) {
+        const { displayName, description, displayIcon } = data.agentList[i];
+    card2(displayIcon, displayName, description);
+      }
+      } else {
+        console.log('no card found')
+      }
+  });
+
+
+function pushData(agentData: Agent): void {
+  data.agentList.push(agentData);
+}
+
+function deleteItems(){
+
+}
