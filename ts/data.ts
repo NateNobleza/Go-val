@@ -1,4 +1,7 @@
+
+
 /* exported data */
+
 // /* exported data */
 // //create data object (local storage) (code journal)
 // Define the interface for Agent data
@@ -7,6 +10,17 @@
   description: string;
   displayIcon: string;
 }
+
+interface Data {
+  agentList: Agent[];
+}
+
+// Sample data for demonstration
+// let data: Agent[] = [];
+let data: Data = {
+  agentList: [],
+}
+=======
 
 // Sample data for demonstration
 let data: Agent[] = [
@@ -22,6 +36,7 @@ let data: Agent[] = [
   },
   // Add more sample agents as needed
 ];
+
 window.addEventListener('beforeunload', ()=>{
   const info = JSON.stringify(data);
   localStorage.setItem('valorant-storage', info)

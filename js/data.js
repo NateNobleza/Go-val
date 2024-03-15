@@ -1,5 +1,11 @@
 "use strict";
 // Sample data for demonstration
+
+// let data: Agent[] = [];
+let data = {
+    agentList: [],
+};
+
 let data = [
     {
         displayName: "Agent 1",
@@ -13,6 +19,7 @@ let data = [
     },
     // Add more sample agents as needed
 ];
+
 window.addEventListener('beforeunload', () => {
     const info = JSON.stringify(data);
     localStorage.setItem('valorant-storage', info);
