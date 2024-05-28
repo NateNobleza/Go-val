@@ -8,7 +8,7 @@ web application for individuals such as myself wha wanted to learn more about
 the games playable characters.
 
 # Want to check it out? 
-natenobleza.github.io/front-end-project/
+https://natenobleza.github.io/Go-val/
 
 # Technologies Used 
 - HTML5
@@ -16,3 +16,9 @@ natenobleza.github.io/front-end-project/
 - Typescript
 - DOM Manipulation
 - API Fetch request
+  
+# App Features
+1. User can search agents
+2. User can view a list of agents
+3. User can add to a list of favorite agents
+4. User can delete agents
