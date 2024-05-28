@@ -22,3 +22,6 @@ https://natenobleza.github.io/Go-val/
 2. User can view a list of agents
 3. User can add to a list of favorite agents
 4. User can delete agents
+
+# Wireframes
+![image](https://github.com/NateNobleza/Go-val/assets/154506686/deb9fb66-24fc-4699-9c5c-6eb996627159)
