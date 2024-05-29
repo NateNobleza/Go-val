@@ -11,6 +11,7 @@ header {
   margin-top: 0;
   width: 0;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 h1 {
@@ -36,7 +37,6 @@ h2 {
   border-width: 10px;
 }
 
-
 .agent-card2 {
   display: flex;
   justify-content: center;
@@ -48,10 +48,12 @@ h2 {
 .agent-container1 {
   display: flex;
   justify-content: center;
+  border-spacing: 10px;
 }
 
 #agent-container {
-  max-width: 800px;
+  max-width: 600px;
+  padding: 10px;
 }
 
 p {
