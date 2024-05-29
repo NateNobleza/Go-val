@@ -28,8 +28,8 @@ https://natenobleza.github.io/Go-val/
 - User Can view agents
 
 ![5bac983e1d44194ce6dc29b54ee3d143](https://github.com/NateNobleza/Go-val/assets/154506686/9897b668-e905-45b9-84ce-3d4914eee8cd)
--User can add agents
+- User can add agents
 
 ![0390e465094ac7c018cced6a315c3bfb](https://github.com/NateNobleza/Go-val/assets/154506686/fb96fd4e-43bb-43bf-9748-e355b26be525)
--User can view list of favorite agents
+- User can view list of favorite agents
 
