@@ -24,7 +24,9 @@ https://natenobleza.github.io/Go-val/
 4. User can delete agents
 
 # Wireframes
-![03![34d18455a75348c7d3340b7423eabbf5](https://github.com/NateNobleza/Go-val/assets/154506686/3bb7fec2-9724-419a-b6cc-b40597865b24)
-90e465094ac7c018cced6a315c3bfb](https://github.com/NateNobleza/Go-val/assets/154506686/99c863c4-6f67-4ef0-97b8-cb27b943f978)
+![34d18455a75348c7d3340b7423eabbf5](https://github.com/NateNobleza/Go-val/assets/154506686/3bb7fec2-9724-419a-b6cc-b40597865b24)
+
 ![5bac983e1d44194ce6dc29b54ee3d143](https://github.com/NateNobleza/Go-val/assets/154506686/9897b668-e905-45b9-84ce-3d4914eee8cd)
+
+![0390e465094ac7c018cced6a315c3bfb](https://github.com/NateNobleza/Go-val/assets/154506686/fb96fd4e-43bb-43bf-9748-e355b26be525)
 
